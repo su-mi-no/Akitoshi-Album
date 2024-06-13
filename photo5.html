@@ -81,7 +81,11 @@
     <div class="container">
         <a href="index.html" class="slide-link">Back to Album</a>
         <h1>Photo 5</h1>
-        <img class="full-image" src="photo5.jpg" alt="Photo 5">
+        <picture>
+            <source srcset="photo5.webp" type="image/webp">
+            <source srcset="photo5.jpg" type="image/jpeg">
+            <img class="full-image" src="photo5.jpg" alt="Photo 5">
+        </picture>        
         <div class="camera-info">
             <div>Camera: FUJIFILM XS-10</div>
             <div>Aperture: f/4.5</div>
