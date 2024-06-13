@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo 14</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        .container {
+            padding: 2rem;
+        }
+        .full-image {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #444;
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+        }
+        .camera-info {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        .camera-info div {
+            border: 1px solid #444;
+            padding: 0.5rem 1rem;
+            background: #111;
+        }
+        a {
+            color: #fff;
+            text-decoration: none;
+            margin-top: 1rem;
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: #444;
+            border-radius: 5px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        /* 页面切换动画 */
+        @keyframes slideOut {
+            from {
+                transform: translateY(0%);
+            }
+            to {
+                transform: translateY(-100%);
+            }
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateY(100%);
+            }
+            to {
+                transform: translateY(0%);
+            }
+        }
+        .slide-out {
+            animation: slideOut 0.5s forwards;
+        }
+        .slide-in {
+            animation: slideIn 0.5s forwards;
+        }
+        img {
+    pointer-events: none;
+    user-select: none;
+}
+
+    </style>
+</head>
+<body class="slide-in">
+    <div class="container">
+        <a href="index.html" class="slide-link">Back to Album</a>
+        <h1>Photo 14</h1>
+        <img class="full-image" src="photo14.jpg" alt="Photo 14">
+        <div class="camera-info">
+            <div>Camera: FUJIFILM XS-10</div>
+            <div>Aperture: f/6.2</div>
+            <div>Shutter Speed: 1/450 sec</div>
+            <div>ISO: 3200</div>
+            <div>Lens: 153mm</div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <p class="copyright"> 2024 Akitoshi02. All rights reserved. | Contact: <a href="mailto:mingjun25@163.com">mingjun25@163.com</a></p>
+            <p class="disclaimer">未经允许禁止商用 | Unauthorized commercial use is prohibited. All images on this website are the property of Akitoshi and are protected under copyright laws. Any unauthorized use, reproduction, or distribution of the images is strictly prohibited. For permissions and inquiries, please contact me via the provided email address.</p>
+        </div>
+    </footer>
+    
+    <script>
+        document.querySelectorAll('.slide-link').forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                document.body.classList.add('slide-out');
+                setTimeout(() => {
+                    window.location.href = link.href;
+                }, 500); // 与动画持续时间一致
+            });
+        });
+    </script>
+</body>
+</html>
