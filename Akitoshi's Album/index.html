@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akitoshi's Album</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        header {
+            text-align: center;
+            padding: 2rem 0;
+            background: #111;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            letter-spacing: 2px;
+            font-family: 'Great Vibes', cursive;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            padding: 2rem;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            transition: transform 0.3s, box-shadow 0.3s, opacity 0.3s;
+            pointer-events: none;
+            user-select: none;
+        }
+        .gallery a {
+            overflow: hidden;
+        }
+        .gallery a img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+        }
+        .gallery a:hover img {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background: #111;
+        }
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .footer-content a {
+            color: #bbb;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+        .footer-content a:hover {
+            text-decoration: underline;
+        }
+        .copyright {
+            font-size: 0.8rem;
+            color: #bbb;
+        }
+        .disclaimer {
+            font-size: 0.8rem;
+            color: #bbb;
+            max-width: 80%;
+            margin: 0.5rem auto;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideOut {
+            from {
+                transform: translateY(0%);
+            }
+            to {
+                transform: translateY(-100%);
+            }
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateY(100%);
+            }
+            to {
+                transform: translateY(0%);
+            }
+        }
+        .slide-out {
+            animation: slideOut 0.5s forwards;
+        }
+        .slide-in {
+            animation: slideIn 0.5s forwards;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Akitoshi's Album</h1>
+    </header>
+    <div class="gallery">
+        <a href="photo1.html" class="slide-link"><img src="photo1.jpg" alt="Photo 1"></a>
+        <a href="photo2.html" class="slide-link"><img src="photo2.jpg" alt="Photo 2"></a>
+        <a href="photo3.html" class="slide-link"><img src="photo3.jpg" alt="Photo 3"></a>
+        <a href="photo4.html" class="slide-link"><img src="photo4.jpg" alt="Photo 4"></a>
+        <a href="photo5.html" class="slide-link"><img src="photo5.jpg" alt="Photo 5"></a>
+        <a href="photo6.html" class="slide-link"><img src="photo6.jpg" alt="Photo 6"></a>
+        <a href="photo7.html" class="slide-link"><img src="photo7.jpg" alt="Photo 7"></a>
+        <a href="photo8.html" class="slide-link"><img src="photo8.jpg" alt="Photo 8"></a>
+        <a href="photo9.html" class="slide-link"><img src="photo9.jpg" alt="Photo 9"></a>
+        <a href="photo10.html" class="slide-link"><img src="photo10.jpg" alt="Photo 10"></a>
+        <a href="photo11.html" class="slide-link"><img src="photo11.jpg" alt="Photo 11"></a>
+        <a href="photo12.html" class="slide-link"><img src="photo12.jpg" alt="Photo 12"></a>
+        <a href="photo13.html" class="slide-link"><img src="photo13.jpg" alt="Photo 13"></a>
+        <a href="photo14.html" class="slide-link"><img src="photo14.jpg" alt="Photo 14"></a>
+        <a href="photo15.html" class="slide-link"><img src="photo15.jpg" alt="Photo 15"></a>
+        <a href="photo16.html" class="slide-link"><img src="photo16.jpg" alt="Photo 16"></a>
+        <a href="photo17.html" class="slide-link"><img src="photo17.jpg" alt="Photo 17"></a>
+        <a href="photo18.html" class="slide-link"><img src="photo18.jpg" alt="Photo 18"></a>
+        <a href="photo19.html" class="slide-link"><img src="photo19.jpg" alt="Photo 19"></a>
+        <a href="photo20.html" class="slide-link"><img src="photo20.jpg" alt="Photo 20"></a>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <p class="copyright"> 2024 Akitoshi02. All rights reserved. | Contact: <a href="mailto:mingjun25@163.com">mingjun25@163.com</a></p>
+            <p class="disclaimer">未经允许禁止商用 | Unauthorized commercial use is prohibited. All images on this website are the property of Akitoshi and are protected under copyright laws. Any unauthorized use, reproduction, or distribution of the images is strictly prohibited. For permissions and inquiries, please contact me via the provided email address.</p>
+        </div>
+    </footer>
+    <script>
+        document.querySelectorAll('.slide-link').forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                document.body.classList.add('slide-out');
+                setTimeout(() => {
+                    window.location.href = link.href;
+                }, 500); // 与动画持续时间一致
+            });
+        });
+    </script>
+</body>
+</html>
